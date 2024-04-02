@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Video Background</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        background-color: aqua; /* Set background color to aqua */
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+        mix-blend-mode: multiply; /* Hide all videos initially */
+    }
+
+    /* Different videos based on screen size */
+    @media (min-width: 200px) and (max-width: 700px) {
+        #video1 {
+            display: block; /* Show video1 for screen width up to 400px */
+        }
+    }
+
+    @media (min-width: 500px) and (max-width: 700px) {
+        #video2 {
+            display: block; /* Show video2 for screen width between 401px and 600px */
+        }
+    }
+
+    @media (min-width: 701px) and (max-width: 800px) {
+        #video3 {
+            display: block; /* Show video3 for screen width between 601px and 800px */
+        }
+    }
+
+    @media (min-width: 801px) and (max-width: 1000px) {
+        #video4 {
+            display: block; /* Show video4 for screen width between 801px and 1000px */
+        }
+    }
+
+    @media (min-width: 1001px) {
+        #video5 {
+            display: block; /* Show video5 for screen width greater than 1000px */
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Videos -->
+    <video id="video1" autoplay muted loop>
+        <source src="deepsea.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video2" autoplay muted loop>
+        <source src="backgroundvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video3" autoplay muted loop>
+        <source src="spooky.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video4" autoplay muted loop>
+        <source src="Bigfin Squid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video5" autoplay muted loop>
+        <source src="massive.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Add more videos as needed -->
+</body>
+</html>

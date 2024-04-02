@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable Objects on Paper Doll</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: floralwhite; /* Cute pastel pink */
+        background-image: url('paper doll base.png');
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        height: 100vh;
+        overflow: scroll; /* Prevent scroll bars */
+        position: relative; /* Required for positioning the noise overlay */
+    }
+
+    .noise-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Ensure the overlay doesn't intercept mouse events */
+    }
+
+    .draggable {
+        position: absolute;
+        cursor: pointer;
+        padding: 0px;
+        border: 0px solid black; /* Add border */
+
+        .label {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px; /* Adjust font size */
+        font-family: 'Comic Sans MS', cursive; /* Choose a cute typeface */
+        color: #ff69b4; /* Cute pink color */
+    }
+</style>
+</head>
+<body>
+<style type="text/css"> 
+  <div class="label">Clothes</div> </style>
+
+    <!-- Draggable Images -->
+    <img src="hat1.png" alt="Draggable Object 1" class="draggable" style="top: 50px; left: 50px; width: 170px; height: auto;">
+    <img src="hat2.png" alt="Draggable Object 2" class="draggable" style="top: 50px; left: 50px; width: 170px; height: auto;">
+    <img src="hat3.png" alt="Draggable Object 3" class="draggable" style="top: 50px; left: 50px; width: 150px; height: auto;">
+     <img src="hat4.png" alt="Draggable Object 4" class="draggable" style="top: 50px; left: 50px; width: 150px; height: auto;">
+    <img src="hat5.png" alt="Draggable Object 5" class="draggable" style="top: 50px; left: 50px; width: 150px; height: auto;">
+    <img src="dress1.png" alt="Draggable Object 6" class="draggable" style="top: 70px; left: 70px; width: 200px; height: auto;">
+    <img src="dress2.png" alt="Draggable Object 7" class="draggable" style="top: 70px; left: 70px; width: 200px; height: auto;">
+    <img src="dress3.png" alt="Draggable Object 8" class="draggable" style="top: 70px; left: 70px; width: 200px; height: auto;">
+    <img src="dress4.png" alt="Draggable Object 9" class="draggable" style="top: 70px; left: 70px; width: 200px; height: auto;">
+    <img src="dress5.png" alt="Draggable Object 10" class="draggable" style="top: 70px; left: 70px; width: 200px; height: auto;">
+    <!-- Add more draggable images here -->
+
+    <!-- Noise SVG (Linked from external file) -->
+    <object class="noise-overlay" type="image/svg+xml" data="noise.svg"></object>
+
+    <script>
+        var draggables = document.querySelectorAll('.draggable');
+
+        var offsetX, offsetY, mouseX, mouseY, draggable;
+
+        draggables.forEach(function(draggable) {
+            draggable.addEventListener('mousedown', function(event) {
+                draggable.style.zIndex = 1000;
+                offsetX = event.clientX - draggable.getBoundingClientRect().left;
+                offsetY = event.clientY - draggable.getBoundingClientRect().top;
+                draggable.style.position = 'absolute';
+                draggable.style.pointerEvents = 'none';
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            });
+        });
+
+        function onMouseMove(event) {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+            draggables.forEach(function(draggable) {
+                if (draggable.style.pointerEvents === 'none') {
+                    draggable.style.left = (mouseX - offsetX) + 'px';
+                    draggable.style.top = (mouseY - offsetY) + 'px';
+                }
+            });
+        }
+
+        function onMouseUp() {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            draggables.forEach(function(draggable) {
+                draggable.style.pointerEvents = 'auto';
+            });
+        }
+    </script>
+
+</body>
+</html>

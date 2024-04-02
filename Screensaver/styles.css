@@ -1,0 +1,57 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: cream;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sheep {
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Automatically adjust the height while maintaining aspect ratio */
+}
+
+.row {
+  display: flex;
+}
+
+.spinner {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  margin: 5px; /* Adjust margin between spinners as needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: color-dodge;
+  opacity: 0.8;
+  transform-origin: center;
+  animation: spin-grow-shrink 5s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes spin-grow-shrink {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  70% {
+    transform: rotate(180deg) scale(1.5); /* Grow slightly bigger */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* Return to original size */
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Video</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video autoplay muted loop id="bg-video">
+    <source src="herding.mp4" type="video/mp4">
+  </video>
+
+  <title>Spinning Objects</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="spinner" style="background-image: url('circle1.png');"></div>
+      
+    </div>
+    <div class="row">
+      <div class="spinner" style="background-image: url('spiral2.png');"></div>
+     <div class="spinner" style="background-image: url('spiral2.png');"></div>
+    </div>
+    <div class="row">
+      <div class="spinner" style="background-image: url('spiral3.png');"></div>
+     <div class="spinner" style="background-image: url('circle2.png');"></div>
+      <div class="spinner" style="background-image: url('spiral3.png');"></div>
+    </div>
+    <div class="row">
+      <div class="spinner" style="background-image: url('circle3.png');"></div>
+     <div class="spinner" style="background-image: url('spiral4.png');"></div>
+      <div class="spinner" style="background-image: url('spiral4.png');"></div>
+      <div class="spinner" style="background-image: url('circle3.png');"></div>
+  
+    </div>
+    <div class="row">
+      <div class="spinner" style="background-image: url('spiral5.png');"></div>
+     <div class="spinner" style="background-image: url('circle4.png');"></div>
+      <div class="spinner" style="background-image: url('spiral5.png');"></div>
+      <div class="spinner" style="background-image: url('circle4.png');"></div>
+      <div class="spinner" style="background-image: url('spiral5.png');"></div>
+  
+  </div>
+
+
+<button id="audio-btn">Play</button>
+
+  <audio id="background-audio">
+    <source src="green.mp3" type="audio/mpeg">
+    <!-- Add additional source elements for different audio formats (e.g., Ogg, WAV) -->
+  </audio>
+
+  <script>
+    // Get the audio element and button
+    const audio = document.getElementById("background-audio");
+    const audioBtn = document.getElementById("audio-btn");
+
+    // Add event listener to the button
+    audioBtn.addEventListener("click", function() {
+      // Play the audio
+      audio.play();
+      // Hide the button after it's clicked
+      audioBtn.style.display = "none";
+    });
+  </script>
+  </script>
+</body>
+</html>

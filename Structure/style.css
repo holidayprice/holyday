@@ -1,0 +1,29 @@
+body {
+    background-image: url(pixelgrass.jpeg);
+    background-repeat: repeat;
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-end;
+
+.container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: firstbaseline;
