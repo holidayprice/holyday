@@ -22,5 +22,11 @@ span {
     width: 50%;
     background-color: gray;
     font-size: 1em;
+
+    .draggable {
+    position: absolute;
+    padding: 5px; /* Add padding */
+    border: px solid black; /* Add border */
+    cursor: url('finger.png'), auto; /* Set cursor to custom image */
   }
 }
