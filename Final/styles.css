@@ -1,0 +1,16 @@
+#console-container {
+  text-align: center;
+}
+
+/* Uses viewport height for width and height to maintain aspect ratio */
+#console-image {
+  width: 45vh;
+  height: 90vh;
+}
+
+#play-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
