@@ -1,5 +1,5 @@
 // Array of images to cycle through
-const images = ['console.png', 'image1.png', 'image2.png']; // Update to PNG images
+const images = ['console.png', 'image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png']; // Update to PNG images
 let currentIndex = 0;
 
 // Function to change the console image
